@@ -3,8 +3,8 @@ import 'package:local_search_app/data/model/location.dart';
 
 class LocationRepository {
   final dio = Dio();
-  final String clientId = 'YOUR_CLIENT_ID';
-  final String clientSecret = 'YOUR_CLIENT_SECRET';
+  final String clientId = 'zzMorvCkKZVco0di3mnq';
+  final String clientSecret = 'JdDVljAuYC';
 
   Future<List<Location>> search(String query) async {
     final response = await dio.get(

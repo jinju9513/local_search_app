@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:local_search_app/ui/detail/detail_page.dart';
 import 'package:local_search_app/ui/home/home_page_view_model.dart';
+import 'package:local_search_app/ui/home/widgets/home_clean_text.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   @override
@@ -61,13 +62,15 @@ class _HomePageState extends ConsumerState<HomePage> {
             return GestureDetector(
               onTap: () {
                 final link = item.link;
-                if (link.startsWith('http')) {
+                if (link != null && link.startsWith('http')) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (_) => DetailPage(link:link),
                     ),
                   );
+                }else{
+                  print('링크가 유효하지 않음: $link');
                 }
               },
               child: Container(
@@ -81,14 +84,14 @@ class _HomePageState extends ConsumerState<HomePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(item.title,
+                    Text(cleanText(item.title),
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 16)),
                     SizedBox(height: 4),
-                    Text(item.category,
+                    Text(cleanText(item.category),
                         style: TextStyle(color: Colors.grey[700])),
                     SizedBox(height: 4),
-                    Text(item.roadAddress,
+                    Text(cleanText(item.roadAddress),
                         style: TextStyle(color: Colors.grey[600])),
                   ],
                 ),

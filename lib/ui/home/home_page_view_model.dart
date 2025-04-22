@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:local_search_app/data/model/location.dart';
 import 'package:local_search_app/data/repository/location_repository.dart';
 import 'package:local_search_app/ui/home/widgets/home_get_address_from_latlng.dart';

@@ -23,12 +23,14 @@ class _HomePageState extends ConsumerState<HomePage> {
         appBar: AppBar(
           actions: [
             GestureDetector(
-              onTap: () {},
+              onTap: () async{
+                await ref.read(locationProvider.notifier).searchByLocation(ref);
+              },
               child: Container(
                 width: 50,
                 height: 50,
                 color: Colors.transparent,
-                child: Icon(Icons.my_location),
+                child: Icon(Icons.gps_fixed),
               ),
             ),
           ],

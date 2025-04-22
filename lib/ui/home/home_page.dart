@@ -65,17 +65,21 @@ class _HomePageState extends ConsumerState<HomePage> {
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) return SizedBox();
                   final keywords = snapshot.data!;
-                  return Wrap(
-                    spacing: 8,
-                    runSpacing: 4,
-                    children: keywords.map((word) {
-                      return GestureDetector(
-                        onTap: () {
-                          ref.read(locationProvider.notifier).search(word);
-                        },
-                        child: Chip(label: Text(word)),
-                      );
-                    }).toList(),
+                  return SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: keywords.map((word) {
+                        return Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: GestureDetector(
+                            onTap: () {
+                              ref.read(locationProvider.notifier).search(word);
+                            },
+                            child: Chip(label: Text(word)),
+                          ),
+                        );
+                      }).toList(),
+                    ),
                   );
                 },
               ),

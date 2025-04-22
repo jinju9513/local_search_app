@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "241586752627",
+    "project_id": "localsearchapp-7bef5",
+    "storage_bucket": "localsearchapp-7bef5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241586752627:android:a4e42e85c4d00087096e06",
+        "android_client_info": {
+          "package_name": "com.example.local_search_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFA5FyXHf18dSJ9TPoX9jLr1snGNig-lE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

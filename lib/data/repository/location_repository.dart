@@ -3,8 +3,8 @@ import 'package:local_search_app/data/model/location.dart';
 
 class LocationRepository {
   final dio = Dio();
-  final String clientId = 'zzMorvCkKZVco0di3mnq';
-  final String clientSecret = 'JdDVljAuYC';
+  final String clientId = '';
+  final String clientSecret = '';
 
   Future<List<Location>> search(String query) async {
     final response = await dio.get(
@@ -15,8 +15,8 @@ class LocationRepository {
       },
       options: Options(
         headers: {
-          'X-Naver-Client-Id': 'zzMorvCkKZVco0di3mnq',
-          'X-Naver-Client-Secret': 'JdDVljAuYC',
+          'X-Naver-Client-Id': '',
+          'X-Naver-Client-Secret': '',
         },
       ),
     );
